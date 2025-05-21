@@ -1,5 +1,5 @@
 var searchResultFormat =
-  '<tr><td align="left">$question</td><td align="center"><a href="$link" target="_blank">$timestamp</a></td><td align="center">$streamedOn</td></tr>';
+  '<tr><td align="left">$question</td><td align="center"><a href="$link" target="_blank">$timestamp</a></td><td align="center">$uploadedOn</td></tr>';
 var linkTemplate = "https://youtube.com/watch?v=$video&t=$time";
 var totalLimit = 250;
 
@@ -77,7 +77,7 @@ var controls = {
         timeInSeconds = r.timestamp.minutes * 60 + r.timestamp.seconds;
         el = searchResultFormat
           .replace("$question", r.question)
-          .replace("$streamedOn", r.streamedOn)
+          .replace("$uploadedOn", r.uploadedOn)
           .replace(
             "$timestamp",
             `${String(Math.floor(r.timestamp.minutes / 60)).padStart(
